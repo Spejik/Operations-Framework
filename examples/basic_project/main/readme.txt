@@ -1,0 +1,1 @@
+You can put anything in this folder. If you require any files (for example Config.php) before OFW, they will be accessible from any file
