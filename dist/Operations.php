@@ -17,6 +17,22 @@ class OFW
     {
         self::$__FUNCTIONS_FOLDER = $functions_folder;
 
+        /**
+         * If request method is OPTIONS, return 204
+         */
+        if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+            ob_start();
+
+            header("HTTP/1.1 204 NO CONTENT");
+
+            header("Cache-Control: no-cache, no-store, must-revalidate");
+            header("Pragma: no-cache");
+            header("Expires: 0");
+
+            ob_end_flush();
+            die();
+        }
+
         // If requests must be post
         if ($must_be_post) {
             if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
