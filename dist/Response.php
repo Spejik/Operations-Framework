@@ -37,6 +37,6 @@ class Response
         header("Pragma: no-cache");
         header("Expires: 0");
         ob_flush();
-        return json_encode(self::$obj);
+        return json_encode(self::$obj, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_NUMERIC_CHECK | JSON_PARTIAL_OUTPUT_ON_ERROR | JSON_PRESERVE_ZERO_FRACTION);
     }
 }
