@@ -15,7 +15,6 @@ class OFW_Vendor
         require __DIR__ . "/Operations.php";
         require __DIR__ . "/Response.php";
         require __DIR__ . "/Texts.php";
-        require __DIR__ . "/Vendor.php";
 
         new Response;
         new Exceptions;
